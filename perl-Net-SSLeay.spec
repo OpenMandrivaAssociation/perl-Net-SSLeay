@@ -11,10 +11,11 @@ Group:		    Development/Perl
 Url:            http://search.cpan.org/dist/%{upstream_name}
 Source0:        http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
 
-Requires:       openssl >= 0.9.3a
+BuildRequires:  openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
+Requires:       openssl >= 0.9.3a
 Obsoletes:      perl-Net_SSLeay < 1.30-2mdv2007.0
 Provides:	    perl-Net_SSLeay = %{version}-%{release}
 Obsoletes:      perl-Net_SSLeay.pm <= 1.30
@@ -28,7 +29,6 @@ Perl extension for using OpenSSL.
 %__chmod 755 examples
 
 %build
-export OPENSSL_PREFIX=/usr
 # note the %{_prefix} which must passed to Makefile.PL, weird but necessary :-(
 echo | %{__perl} Makefile.PL %{_prefix} INSTALLDIRS=vendor
 %make OPTIMIZE="$RPM_OPT_FLAGS"
