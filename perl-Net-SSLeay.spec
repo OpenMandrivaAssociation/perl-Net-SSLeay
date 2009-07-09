@@ -17,7 +17,7 @@ BuildRequires:	perl-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 Obsoletes:      perl-Net_SSLeay < 1.30-2mdv2007.0
 Provides:	    perl-Net_SSLeay = %{version}-%{release}
-Obsoletes:      perl-Net_SSLeay.pm < 1.30
+Obsoletes:      perl-Net_SSLeay.pm <= 1.30
 Provides:	    perl-Net_SSLeay.pm = %{version}-%{release}
 
 %description
