@@ -28,6 +28,7 @@ Perl extension for using OpenSSL.
 %__chmod 755 examples
 
 %build
+export OPENSSL_PREFIX=/usr
 # note the %{_prefix} which must passed to Makefile.PL, weird but necessary :-(
 echo | %{__perl} Makefile.PL %{_prefix} INSTALLDIRS=vendor
 %make OPTIMIZE="$RPM_OPT_FLAGS"
