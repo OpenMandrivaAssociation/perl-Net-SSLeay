@@ -14,6 +14,7 @@ Source0:        http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{ups
 BuildRequires:  openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
+BuildRequires:	zlib1
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 Requires:       openssl >= 0.9.3a
 Obsoletes:      perl-Net_SSLeay < 1.30-2mdv2007.0
