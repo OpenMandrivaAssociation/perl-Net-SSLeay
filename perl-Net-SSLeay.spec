@@ -15,6 +15,7 @@ BuildRequires:  openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	zlib1
+BuildRequires:	zlib1-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 Requires:       openssl >= 0.9.3a
 Obsoletes:      perl-Net_SSLeay < 1.30-2mdv2007.0
