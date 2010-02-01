@@ -1,9 +1,9 @@
 %define upstream_name      Net-SSLeay
-%define upstream_version   1.35
+%define upstream_version 1.36
 
 Name:		    perl-%{upstream_name}
 Version:	    %perl_convert_version %{upstream_version}
-Release:	    %mkrel 2
+Release:	    %mkrel 1
 
 Summary:	    Perl extension for using OpenSSL
 License:	    BSD-like
