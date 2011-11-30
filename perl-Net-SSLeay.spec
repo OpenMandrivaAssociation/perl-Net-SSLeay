@@ -1,10 +1,9 @@
 %define upstream_name      Net-SSLeay
-%define upstream_version 1.36
+%define upstream_version 1.42
 
 Name:		    perl-%{upstream_name}
 Version:	    %perl_convert_version %{upstream_version}
-Release:	    %mkrel 8
-
+Release:	    1
 Summary:	    Perl extension for using OpenSSL
 License:	    BSD-like
 Group:		    Development/Perl
@@ -15,12 +14,6 @@ BuildRequires:  openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	zlib-devel
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
-Requires:       openssl >= 0.9.3a
-Obsoletes:      perl-Net_SSLeay < 1.30-2mdv2007.0
-Provides:	    perl-Net_SSLeay = %{version}-%{release}
-Obsoletes:      perl-Net_SSLeay.pm <= 1.30
-Provides:	    perl-Net_SSLeay.pm = %{version}-%{release}
 
 %description
 Perl extension for using OpenSSL.
@@ -43,11 +36,7 @@ perl -p -i -e 's|/usr/local/bin|/usr/bin|g;' *.pm examples/*
 rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc Changes Credits README examples QuickRef
 %{perl_vendorarch}/auto/Net
 %{perl_vendorarch}/Net
