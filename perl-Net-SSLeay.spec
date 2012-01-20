@@ -3,7 +3,7 @@
 
 Name:		    perl-%{upstream_name}
 Version:	    %perl_convert_version %{upstream_version}
-Release:	    1
+Release:	    2
 Summary:	    Perl extension for using OpenSSL
 License:	    BSD-like
 Group:		    Development/Perl
@@ -14,6 +14,8 @@ BuildRequires:  openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	zlib-devel
+# temporary dep due to the perl-5.14 bump
+BuildRequires:  perl-List-MoreUtils >= 0.320.0-4
 
 %description
 Perl extension for using OpenSSL.
