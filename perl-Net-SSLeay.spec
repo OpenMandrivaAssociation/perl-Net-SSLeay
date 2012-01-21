@@ -14,8 +14,6 @@ BuildRequires:  openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	zlib-devel
-# temporary dep due to the perl-5.14 bump
-BuildRequires:  perl-List-MoreUtils >= 0.320.0-4
 
 %description
 Perl extension for using OpenSSL.
