@@ -1,16 +1,18 @@
-%define upstream_name      Net-SSLeay
-%define upstream_version 1.42
+%define upstream_name Net-SSLeay
+%define upstream_version 1.51
 
-Name:		    perl-%{upstream_name}
-Version:	    %perl_convert_version %{upstream_version}
-Release:	    6
-Summary:	    Perl extension for using OpenSSL
-License:	    BSD-like
-Group:		    Development/Perl
-Url:            http://search.cpan.org/dist/%{upstream_name}
-Source0:        http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
-
-BuildRequires:  openssl >= 0.9.3a
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
+Summary:	Perl extension for using OpenSSL
+License:	BSD-like
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(MIME::Base64)
+BuildRequires:	perl(Test::More)
+BuildRequires:	openssl >= 0.9.3a
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	zlib-devel
@@ -38,7 +40,6 @@ perl -p -i -e 's|/usr/local/bin|/usr/bin|g;' *.pm examples/*
 #make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %files
