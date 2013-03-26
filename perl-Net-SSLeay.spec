@@ -1,39 +1,33 @@
-%define upstream_name Net-SSLeay
-%define upstream_version 1.51
+%define	modname	Net-SSLeay
+%define	modver	1.51
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	2
 Summary:	Perl extension for using OpenSSL
 License:	BSD-like
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Net/%{modname}-%{modver}.tar.gz
+Patch0:		Net-SSLeay-1.51-dont-add-extra-lib-paths.patch
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(MIME::Base64)
 BuildRequires:	perl(Test::More)
-BuildRequires:	openssl >= 0.9.3a
-BuildRequires:	openssl-devel
+BuildRequires:	openssl
+BuildRequires:	pkgconfig(openssl)
 BuildRequires:	perl-devel
-BuildRequires:	zlib-devel
-Requires:	openssl >= 0.9.3a
-Obsoletes:	perl-Net_SSLeay < 1.30-2mdv2007.0
-Provides:	perl-Net_SSLeay = %{version}-%{release}
-Obsoletes:	perl-Net_SSLeay.pm <= 1.30
-Provides:	perl-Net_SSLeay.pm = %{version}-%{release}
+BuildRequires:	pkgconfig(zlib)
 
 %description
 Perl extension for using OpenSSL.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
-%__chmod 755 examples
+%setup -q -n %{modname}-%{modver}
+%patch0 -p1 -b .libpaths~
 
 %build
-# note the %{_prefix} which must passed to Makefile.PL, weird but necessary :-(
-echo | %{__perl} Makefile.PL %{_prefix} INSTALLDIRS=vendor
-%make OPTIMIZE="$RPM_OPT_FLAGS"
-perl -p -i -e 's|/usr/local/bin|/usr/bin|g;' *.pm examples/*
+PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+%make OPTIMIZE="%{optflags}"
 
 %check
 # testing the package implies contacting external sites (some are down ?)
@@ -48,9 +42,14 @@ perl -p -i -e 's|/usr/local/bin|/usr/bin|g;' *.pm examples/*
 %{perl_vendorarch}/Net
 %{_mandir}/*/*
 
-
-
 %changelog
+* Fri Dec 28 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.510.0-1
+- get rid of '-L/usr -L/usr/lib' getting passed to linker (P0)
+- clean dependencies
+- rebuild for new perl-5.16.2
+- cleanups
+- new version
+
 * Fri Jan 27 2012 Oden Eriksson <oeriksson@mandriva.com> 1.420.0-5
 + Revision: 769283
 - fix #65191 (perl-Net-SSLeay stop providing perl-Net_SSLeay and perl-Net_SSLeay.pm)
