@@ -5,7 +5,7 @@ Summary:	Perl extension for using OpenSSL
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
