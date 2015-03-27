@@ -3,5 +3,6 @@ removed_sources:
   Net-SSLeay-1.58.tar.gz: fe0f5a8b3d66c2b5371822f88b78dac42db67c79
   Net-SSLeay-1.63.tar.gz: 347e890feed26635db461c67f83f70d31a1e21a8
   Net-SSLeay-1.64.tar.gz: 4d2361775f7923bc81b65ad7320bfcbcda6a0f89
-sources:
   Net-SSLeay-1.66.tar.gz: 04925fb5964c45504c6e2f13de82425a0f926431
+sources:
+  Net-SSLeay-1.68.tar.gz: cf2fea6241e0250cbcf3e572835b2397f35944d2

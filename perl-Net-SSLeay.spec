@@ -1,11 +1,11 @@
 %define	modname	Net-SSLeay
-%define modver 1.66
+%define modver 1.68
 
 Summary:	Perl extension for using OpenSSL
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	4
+Release:	1
 License:	BSD-like
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
