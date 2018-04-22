@@ -16,6 +16,7 @@ BuildRequires:	perl(MIME::Base64)
 BuildRequires:	perl(Test::More)
 BuildRequires:	openssl
 BuildRequires:	perl-devel
+BuildRequires:  perl-Test-Simple
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
 
