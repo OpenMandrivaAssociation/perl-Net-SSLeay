@@ -13,8 +13,8 @@ Source0:	http://www.cpan.org/modules/by-module/Net/%{modname}-%{modver}.tar.gz
 Patch0:		Net-SSLeay-1.51-dont-add-extra-lib-paths.patch
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(MIME::Base64)
-BuildRequires:	perl(Test::More)
 BuildRequires:	openssl
+BuildRequires:  perl(Test)
 BuildRequires:	perl-devel
 BuildRequires:  perl-Test-Simple
 BuildRequires:	pkgconfig(openssl)
