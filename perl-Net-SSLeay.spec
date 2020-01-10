@@ -25,7 +25,7 @@ Perl extension for using OpenSSL.
 
 %prep
 %setup -qn %{modname}-%{modver}
-%apply_patches
+%autopatch -p1
 
 %build
 PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
