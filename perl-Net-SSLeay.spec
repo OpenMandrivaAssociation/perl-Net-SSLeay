@@ -5,7 +5,7 @@ Summary:	Perl extension for using OpenSSL
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/distribution/Net-SSLeay/lib/Net/SSLeay.pod
@@ -29,14 +29,14 @@ Perl extension for using OpenSSL.
 
 %build
 PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
-%make OPTIMIZE="%{optflags}"
+%make_build OPTIMIZE="%{optflags}"
 
 %check
 # testing the package implies contacting external sites (some are down ?)
 #make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes Credits README examples QuickRef
