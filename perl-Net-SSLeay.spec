@@ -1,5 +1,5 @@
 %define	modname	Net-SSLeay
-%define modver 1.90
+%define modver 1.92
 
 Summary:	Perl extension for using OpenSSL
 
