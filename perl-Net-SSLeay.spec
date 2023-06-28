@@ -5,7 +5,7 @@ Summary:	Perl extension for using OpenSSL
 
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/distribution/Net-SSLeay/lib/Net/SSLeay.pod
