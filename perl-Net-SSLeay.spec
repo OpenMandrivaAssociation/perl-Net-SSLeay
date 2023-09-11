@@ -1,11 +1,10 @@
-%define	modname	Net-SSLeay
+%define modname Net-SSLeay
 %define modver 1.92
 
 Summary:	Perl extension for using OpenSSL
-
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	4
 License:	BSD-like
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/distribution/Net-SSLeay/lib/Net/SSLeay.pod
@@ -14,9 +13,9 @@ Patch0:		Net-SSLeay-1.51-dont-add-extra-lib-paths.patch
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(MIME::Base64)
 BuildRequires:	openssl
-BuildRequires:  perl(Test)
+BuildRequires:	perl(Test)
 BuildRequires:	perl-devel
-BuildRequires:  perl-Test-Simple
+BuildRequires:	perl-Test-Simple
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
 
@@ -24,14 +23,13 @@ BuildRequires:	pkgconfig(zlib)
 Perl extension for using OpenSSL.
 
 %prep
-%setup -qn %{modname}-%{modver}
-%autopatch -p1
+%autosetup -p1 -n %{modname}-%{modver}
 
 %build
 PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
 %make_build OPTIMIZE="%{optflags}"
 
-%check
+#check
 # testing the package implies contacting external sites (some are down ?)
 #make test
 
@@ -42,4 +40,4 @@ PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes Credits README examples QuickRef
 %{perl_vendorarch}/auto/Net
 %{perl_vendorarch}/Net
-%{_mandir}/man3/*
+%doc %{_mandir}/man3/*
