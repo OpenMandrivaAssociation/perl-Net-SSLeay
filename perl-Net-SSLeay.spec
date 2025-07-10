@@ -1,14 +1,13 @@
 %define modname Net-SSLeay
-%define modver 1.92
 
 Summary:	Perl extension for using OpenSSL
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	4
+Version:	1.94
+Release:	1
 License:	BSD-like
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/distribution/Net-SSLeay/lib/Net/SSLeay.pod
-Source0:	https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-%{modver}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-%{version}.tar.gz
 Patch0:		Net-SSLeay-1.51-dont-add-extra-lib-paths.patch
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(MIME::Base64)
@@ -23,7 +22,7 @@ BuildRequires:	pkgconfig(zlib)
 Perl extension for using OpenSSL.
 
 %prep
-%autosetup -p1 -n %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
 
 %build
 PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
