@@ -3,7 +3,7 @@
 Summary:	Perl extension for using OpenSSL
 Name:		perl-%{modname}
 Version:	1.94
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/distribution/Net-SSLeay/lib/Net/SSLeay.pod
