@@ -9,6 +9,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/distribution/Net-SSLeay/lib/Net/SSLeay.pod
 Source0:	https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-%{version}.tar.gz
 Patch0:		Net-SSLeay-1.51-dont-add-extra-lib-paths.patch
+BuildRequires:	make
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(MIME::Base64)
 BuildRequires:	openssl
